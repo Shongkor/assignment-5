@@ -1,7 +1,8 @@
+// for wrong input
 function showWarning(warningText) {
     document.getElementById("warningText").innerText = warningText;
 }
-
+// adding click event to search Button
 document.getElementById("search-btn").addEventListener("click", function () {
     showWarning("");
     document.getElementById("mealDetails").style.display = 'none';
@@ -22,7 +23,7 @@ document.getElementById("search-btn").addEventListener("click", function () {
     }
     document.getElementById("inputMealName").value = "";
 })
-
+//displaying found meal
 function showFoundMeals(meals) {
     // clearing previous search result
     document.getElementById("allMeal").innerHTML = "";
@@ -39,7 +40,7 @@ function showFoundMeals(meals) {
     });
 }
 
-// fetching
+// fetching from
 function mealDetails(mealId) {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
         .then(res => res.json())
@@ -47,7 +48,7 @@ function mealDetails(mealId) {
             displayMealDetails(data.meals[0]);
         })
 }
-
+//meal information from same page
 function displayMealDetails(meal) {
     const ingredientsDetails =
         `
